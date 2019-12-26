@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style>
+		body,ul,li,p{
+			margin: 0;
+			padding: 0;
+		}
+		
+		body{
+			background-color: #EEE;
+		}
+		
+		li{
+			list-style: none;
+		}
+		
+		a{
+			text-decoration: none;
+		}
+		
+		#wrap{
+			width: 462px;
+			height: 160px;
+			margin: 50px auto;
+		}
+		
+		#wrap .header{
+			font-size: 0;
+		}
+		
+		.header span{
+			display: inline-block;
+			background-color: #000;
+			padding: 5px 49px;
+			font-size: 14px;
+			color: #FFF;
+			cursor: pointer;
+		}
+		
+		.header span.on{
+			background-color: #AAA;
+			color: #FFF;
+		}
+		
+		#wrap .content{
+			position: relative;
+		}
+		
+		.content ul{
+			position: absolute;
+			display:none;
+			width: 100%;
+			top: 0;
+			left: 0;
+		}
+		
+		.content ul.onmove{
+			display: block;
+		}
+		
+		.content ul li{
+			background-color: white;
+			padding: 8px 0 8px 5px;
+			border-bottom: 1px dashed #AAA;
+			text-indent: 12px;
+		}
+	
+	</style>
+</head>
+
+<body>
+	<div id="wrap">
+		<div class="header">
+			<span class="on">热门排行</span>
+			<span>美图速递</span>
+			<span>前沿科技</span>
+		</div>
+		<div class="content">
+			<ul class="onmove">
+				<li>脱贫攻坚越到最后时刻越要响鼓重锤</li>
+				<li>减下税费 加上信心 2020年春运1月10日启动</li>
+				<li>【中国稳健前行】国家治理现代化的“中国道路” </li>
+				<li>首都规划建设委员会召开全体会议  央视网“智慧+”</li>
+			</ul>
+			
+			<ul>
+				<li>罕见“日偏食”正在上演！第一波网友的图已经来了</li>
+				<li>中国首轮带量采购收官 医药价格下降超60%</li>
+				<li>Adidas刚宣布刘亦菲为新代言人 香港旗舰店就被砸了 </li>
+				<li>女子投毒“陷害”国考竞争对手 一审获刑八个月</li>
+			</ul>
+		
+			<ul>
+				<li>真功夫回应被李小龙女儿起诉：准备积极应诉</li>
+				<li>醉酒男打跑代驾开车上路 一路剐蹭又追尾...</li>
+				<li>互联网2020:收费越来越多 免费越来越少？</li>
+				<li>5G+工业互联网，谁是主角，谁是配角？</li>
+			</ul>
+		</div>
+	</div>
+	
+	<script>
+		let tagSpan=document.getElementsByTagName("span");
+		let tagUl=document.getElementsByTagName("ul");
+		let index=0;
+		
+		for(let i=0;i<tagSpan.length;i++){
+			tagSpan[i].onmouseenter=function(){
+				tagSpan[index].className="";
+				tagUl[index].className="";
+				index=i;
+				tagSpan[index].className="on";
+				tagUl[index].className="onmove";
+			}
+		}
+	
+	</script>
+</body>
+</html>
